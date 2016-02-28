@@ -9,7 +9,8 @@ X_test, Y_test = dataset.get_test_set()
 classif = OneVsRestClassifier(SVC(kernel='linear'))
 classif.fit(X_train, Y_train)
 Y_test_predict = classif.predict(X_test)
-[precision, recall, F1, support] = precision_recall_fscore_support(Y_test, Y_test_predict, average='samples')
+[precision, recall, F1, support] = \
+    precision_recall_fscore_support(Y_test, Y_test_predict, average='samples')
 accuracy = accuracy_score(Y_test, Y_test_predict)
 print 'accuracy, precision, recall, F1'
 print accuracy, precision, recall, F1
